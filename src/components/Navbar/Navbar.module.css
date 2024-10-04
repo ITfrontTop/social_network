@@ -2,6 +2,7 @@
   grid-area: n;
   background-color: #dfe3ee;
   padding: 20px;
+  border-right: 1px solid #3b5998;
 }
 
 .item a {

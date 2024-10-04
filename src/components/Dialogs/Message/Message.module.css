@@ -1,0 +1,10 @@
+.message {
+  padding: 10px;
+  color: #000;
+  border: 1px solid #90949c;
+  border-radius: 10px;
+  background-color: #fff;
+  margin-bottom: 5px;
+  width: 50%;
+  /* text-align: left; */
+}
