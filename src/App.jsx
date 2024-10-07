@@ -3,12 +3,12 @@ import './App.css';
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
 
-const App = () => {
+const App = (props) => {
   return (
     <div>
       <div className="app-wrapper">
         <Header />
-        <Navbar />
+        <Navbar state={props.state} />
         <div className="app-wrapper-content">
           <Outlet />
         </div>

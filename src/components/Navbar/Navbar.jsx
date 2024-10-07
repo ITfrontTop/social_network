@@ -5,8 +5,9 @@ import { FaRegNewspaper } from 'react-icons/fa6';
 import { BsFileEarmarkMusic } from 'react-icons/bs';
 import { IoSettingsOutline } from 'react-icons/io5';
 import { AiOutlineProfile } from 'react-icons/ai';
+import Friends from './Friends/Friends';
 
-const Navbar = () => {
+const Navbar = (props) => {
   return (
     <nav className={s.nav}>
       <div className={s.item}>
@@ -45,6 +46,7 @@ const Navbar = () => {
           Settings
         </NavLink>
       </div>
+      <Friends state={props.state.friends} />
     </nav>
   );
 };

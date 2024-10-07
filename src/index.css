@@ -1,5 +1,7 @@
 :root {
   font-family: Inter, sans-serif;
+  width: 100vw;
+  overflow-x: hidden;
 
   /* --main-color: #3b5998;
   --main-color-2: #4267b3;
@@ -16,8 +18,14 @@
   --black: #000; */
 }
 
-* {
+html {
   box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
 }
 
 ul,

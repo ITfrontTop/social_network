@@ -1,0 +1,22 @@
+.item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.item a {
+  color: #616771;
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px;
+}
+
+.item a.activeLink {
+  color: #3b5998;
+}
+
+.image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}

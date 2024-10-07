@@ -1,0 +1,21 @@
+.item {
+  color: #616771;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+/*чтобы имена отображались определенного размера*/
+.name {
+  max-width: 50px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

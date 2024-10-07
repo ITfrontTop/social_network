@@ -4,13 +4,13 @@ import App from './App.jsx';
 import './index.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Profile from './components/Profile/Profile.jsx';
-import Dialogs from './components/Dialogs/DIalogs.jsx';
+import Dialogs from './components/Dialogs/Dialogs.jsx';
 import state from './redux/state.js';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <App />,
+    element: <App state={state.sidebar} />,
     children: [
       {
         path: '/profile',

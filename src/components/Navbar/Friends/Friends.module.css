@@ -1,0 +1,18 @@
+.item {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.title {
+  color: #616771;
+  padding: 30px 10px 10px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
