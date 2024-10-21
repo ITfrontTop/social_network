@@ -10,3 +10,35 @@
 .messages {
   padding: 10px;
 }
+
+/*чтобы отправить message*/
+.sendMessage {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.sendWindow {
+  resize: none;
+  width: 80%;
+  padding: 10px;
+  color: #000;
+  border: 1px solid #90949c;
+  border-radius: 10px;
+}
+
+.sendButton {
+  background-color: #4267b3;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid transparent;
+}
+
+.sendButton:hover {
+  border: 2px solid #fff;
+}

@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 const DialogItem = (props) => {
   let path = '/dialogs/' + props.id;
-  console.log(props.image);
+  // console.log(props.image);
   return (
     <div className={s.item}>
       <img className={s.image} src={props.image} alt="mini avatar" />

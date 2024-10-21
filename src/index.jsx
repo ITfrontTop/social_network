@@ -1,36 +1,34 @@
-import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
-import App from './App.jsx';
-import './index.css';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Profile from './components/Profile/Profile.jsx';
-import Dialogs from './components/Dialogs/Dialogs.jsx';
-import state from './redux/state.js';
+import state from './redux/state';
+import { rerenderEntireTree } from './render';
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <App state={state.sidebar} />,
-    children: [
-      {
-        path: '/profile',
-        element: <Profile state={state.profilePage} />
-      },
-      {
-        path: '/dialogs',
-        element: <Dialogs state={state.dialogsPage} />,
-        children: [
-          {
-            path: '/dialogs/1'
-          }
-        ]
-      }
-    ]
-  }
-]);
+// const router = createBrowserRouter([
+//   {
+//     path: '/',
+//     element: <App state={state.sidebar} />,
+//     children: [
+//       {
+//         path: '/profile',
+//         element: <Profile state={state.profilePage} addPost={addPost} />
+//       },
+//       {
+//         path: '/dialogs',
+//         element: <Dialogs state={state.dialogsPage} />,
+//         children: [
+//           {
+//             path: '/dialogs/1'
+//           }
+//         ]
+//       }
+//     ]
+//   }
+// ]);
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <RouterProvider router={router} />
-  </StrictMode>
-);
+// let rerenderEntireTree = () => {
+//   createRoot(document.getElementById('root')).render(
+//     <StrictMode>
+//       <RouterProvider router={router} />
+//     </StrictMode>
+//   );
+// };
+
+rerenderEntireTree(state);
