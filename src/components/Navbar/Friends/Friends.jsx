@@ -13,7 +13,7 @@ const Friends = (props) => {
         Friends:
       </div>
       <div className={s.item}>
-        {props.state.map((element) => (
+        {props.state.friends.map((element) => (
           <FriendItem
             id={element.id}
             name={element.name}
