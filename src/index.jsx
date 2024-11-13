@@ -5,6 +5,7 @@ import { createRoot } from 'react-dom/client';
 import { StrictMode } from 'react';
 import Profile from './components/Profile/Profile';
 import Dialogs from './components/Dialogs/Dialogs';
+import DialogsContainer from './components/Dialogs/DialogsContainer';
 
 const root = createRoot(document.getElementById('root'));
 
@@ -19,18 +20,11 @@ const rerenderEntireTree = () => {
             children: [
               {
                 path: '/profile',
-                element: (
-                  <Profile
-                    state={store.getState()}
-                    dispatch={store.dispatch.bind(store)}
-                  />
-                )
+                element: <Profile store={store} />
               },
               {
                 path: '/dialogs',
-                element: (
-                  <Dialogs state={store.getState().dialogsPage} store={store} />
-                ),
+                element: <DialogsContainer store={store} />,
                 children: [{ path: '/dialogs/1' }]
               }
             ]
