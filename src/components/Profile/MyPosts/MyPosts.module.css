@@ -2,6 +2,43 @@
   padding: 10px;
 }
 
+.title {
+  color: #616771;
+}
+
 .posts {
   margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.wrapperSendPost {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sendPost {
+  resize: none;
+  width: 80%;
+  padding: 10px;
+  color: #000;
+  border: 1px solid #90949c;
+  border-radius: 10px;
+}
+
+.sendPostButton {
+  background-color: #4267b3;
+  color: #e9ebee;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid transparent;
+}
+
+.sendPostButton:hover {
+  color: #fff;
 }

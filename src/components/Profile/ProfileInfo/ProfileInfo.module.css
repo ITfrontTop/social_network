@@ -1,3 +1,41 @@
+.background {
+  color: #fff;
+  background: linear-gradient(-45deg, #4267b3, #ffffff30, #8b9dc3, #3b5998);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  height: 30vh;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 .descriptionBlock {
   padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.imageUser {
+  width: 100px;
+  height: 100px;
+  background-color: #4267b3;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.descriptionUser {
+  color: #616771;
 }

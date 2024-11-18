@@ -20,17 +20,20 @@ const MyPosts = (props) => {
 
   return (
     <div className={s.postsBlock}>
-      <h3>My posts</h3>
-      <div>
+      <h3 className={s.title}>My posts</h3>
+      <div className={s.wrapperSendPost}>
         <div>
           <textarea
+            className={s.sendPost}
             onChange={onPostChange}
             ref={newPostElement}
             value={props.newPostText}
           />
         </div>
         <div>
-          <button onClick={onAddPost}>Add post</button>
+          <button className={s.sendPostButton} onClick={onAddPost}>
+            Add post
+          </button>
         </div>
       </div>
       <div className={s.posts}>{postsElement}</div>

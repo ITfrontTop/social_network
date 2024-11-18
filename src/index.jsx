@@ -6,31 +6,35 @@ import { StrictMode } from 'react';
 import Profile from './components/Profile/Profile';
 import Dialogs from './components/Dialogs/Dialogs';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
+import StoreContext from './StoreContext';
+import { Provider } from 'react-redux';
 
 const root = createRoot(document.getElementById('root'));
 
 const rerenderEntireTree = () => {
   root.render(
     <StrictMode>
-      <RouterProvider
-        router={createBrowserRouter([
-          {
-            path: '/',
-            element: <App state={store.getState()} />,
-            children: [
-              {
-                path: '/profile',
-                element: <Profile store={store} />
-              },
-              {
-                path: '/dialogs',
-                element: <DialogsContainer store={store} />,
-                children: [{ path: '/dialogs/1' }]
-              }
-            ]
-          }
-        ])}
-      />
+      <Provider store={store}>
+        <RouterProvider
+          router={createBrowserRouter([
+            {
+              path: '/',
+              element: <App state={store.getState()} />,
+              children: [
+                {
+                  path: '/profile',
+                  element: <Profile store={store} />
+                },
+                {
+                  path: '/dialogs',
+                  element: <DialogsContainer store={store} />,
+                  children: [{ path: '/dialogs/1' }]
+                }
+              ]
+            }
+          ])}
+        />
+      </Provider>
     </StrictMode>
   );
 };
