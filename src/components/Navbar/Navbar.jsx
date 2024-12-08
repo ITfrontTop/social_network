@@ -5,6 +5,7 @@ import { FaRegNewspaper } from 'react-icons/fa6';
 import { BsFileEarmarkMusic } from 'react-icons/bs';
 import { IoSettingsOutline } from 'react-icons/io5';
 import { AiOutlineProfile } from 'react-icons/ai';
+import { FiUsers } from 'react-icons/fi';
 import Friends from './Friends/Friends';
 
 const Navbar = (props) => {
@@ -26,6 +27,15 @@ const Navbar = (props) => {
         >
           <TbMessages size="20px" />
           Messages
+        </NavLink>
+      </div>
+      <div className={s.item}>
+        <NavLink
+          to={'/users'}
+          className={({ isActive }) => (isActive ? s.activeLink : '')}
+        >
+          <FiUsers size="20px" />
+          Users
         </NavLink>
       </div>
       <div className={s.item}>

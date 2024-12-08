@@ -1,8 +1,54 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+json
+/\*
+http://localhost:3000/users?\_per_page=2&\_page=3
 
-Currently, two official plugins are available:
+где:
+\_per_page=2 количество файлов на странице
+\_page=3 номер страницы
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+{
+"first": 1,
+"prev": 2,
+"next": 4,
+"last": 23,
+"pages": 23,
+"items": 45,
+"data": [
+{
+"name": "Ira",
+"id": "124",
+"uniqueUrlName": null,
+"photos": {
+"small": null,
+"large": null
+},
+"status": "Коли щось розумієш, то жити стає легше. А коли щось відчуєш – то важче. Але чомусь завжди хочеться відчути, а не розуміти!",
+"followed": false,
+"location": {
+"city": "Kiev",
+"country": "Ukraine"
+}
+},
+{
+"name": "Maria",
+"id": "125",
+"uniqueUrlName": null,
+"photos": {
+"small": null,
+"large": null
+},
+"status": "О, ти це бачив? Це життя повз проходить …",
+"followed": false,
+"location": {
+"city": "Kiev",
+"country": "Ukraine"
+}
+}
+]
+}
+
+http://localhost:3000/profile?userId=122
+
+Выдает нам значения юзера с userId 122

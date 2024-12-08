@@ -95,7 +95,7 @@ let store = {
           id: 2,
           name: 'Mike',
           images:
-            'https://illustrators.ru/uploads/illustration/image/1531804/B7C59B33-D215-4E1F-B7B5-2C432187D103.png'
+            'https://cs14.pikabu.ru/post_img/big/2024/04/15/11/1713208600167542114.jpg'
         },
         {
           id: 3,

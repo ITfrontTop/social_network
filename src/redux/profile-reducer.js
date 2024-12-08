@@ -1,5 +1,6 @@
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const SET_USER_PROFILE = 'SET_USER_PROFILE';
 
 let initialState = {
   posts: [
@@ -24,7 +25,31 @@ let initialState = {
       likesCount: 16
     }
   ],
-  newPostText: 'it-kamasutra.com'
+  newPostText: 'it-kamasutra.com',
+  // нужно поменять на данные с запроса
+  profile: [
+    {
+      aboutMe: '-',
+      contacts: {
+        facebook: 'facebook.com/58132475',
+        website: 'alex.com',
+        vk: '-',
+        twitter: 'twitter.com/45732',
+        instagram: 'instagram.com/82347182',
+        youtube: 'youtube.com/34525',
+        github: 'github/alex',
+        mainLink: '-'
+      },
+      lookingForAJob: true,
+      lookingForAJobDescription: 'i like coding',
+      fullName: 'Alex',
+      userId: 120,
+      photos: {
+        small: '120s.jpg',
+        large: '120l.jpg'
+      }
+    }
+  ]
 };
 
 // решения gpt
@@ -47,6 +72,9 @@ const profileReducer = (state = initialState, action) => {
         ...state,
         newPostText: action.newText
       };
+    case SET_USER_PROFILE: {
+      return { ...state, profile: action.profile };
+    }
     default:
       return state;
   }
@@ -57,6 +85,11 @@ export const addPostActionCreator = () => ({ type: ADD_POST });
 export const updateNewPostTextActionCreator = (text) => ({
   type: UPDATE_NEW_POST_TEXT,
   newText: text
+});
+
+export const setUserProfile = (profile) => ({
+  type: SET_USER_PROFILE,
+  profile
 });
 
 export default profileReducer;

@@ -1,6 +1,11 @@
+import Preloader from '../../common/Preloader/Preloader';
 import s from './ProfileInfo.module.css';
 
-const ProfileInfo = () => {
+const ProfileInfo = (props) => {
+  if (!props.profile) {
+    return <Preloader />;
+  }
+
   return (
     <div>
       <div>
@@ -11,7 +16,11 @@ const ProfileInfo = () => {
         <div className={s.background}></div>
       </div>
       <div className={s.descriptionBlock}>
-        <div className={s.imageUser}>image user</div>
+        <div className={s.imageUser}>
+          {/* добавляем картинку которые находять в папке public/usersImages */}
+          <img src={`usersImages/${props.profile[0].photos.large}`} />
+        </div>
+        {/* также нужно добавить все данные с json */}
         <div className={s.descriptionUser}>description</div>
       </div>
     </div>
