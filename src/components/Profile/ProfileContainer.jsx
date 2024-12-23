@@ -1,18 +1,17 @@
 import React from 'react';
 import Profile from './Profile';
-import axios from 'axios';
 import { connect } from 'react-redux';
-import { setUserProfile } from '../../redux/profile-reducer';
+import { getUserProfile } from '../../redux/profile-reducer';
+import withAuthRedirect from '../../hoc/withAuthRedirect';
+import { compose } from 'redux';
 
 class ProfilesContainer extends React.Component {
   componentDidMount() {
-    // let userId = this.props.match.params.userId;
-    // if (!userId) {
-    //   userId = 2;
-    // }
-    axios.get('http://localhost:3000/profile?userId=120').then((response) => {
-      this.props.setUserProfile(response.data);
-    });
+    let userId = this.props.match.params.userId;
+    if (!userId) {
+      userId = 2;
+    }
+    this.props.getUserProfile(userId);
   }
 
   render() {
@@ -28,14 +27,9 @@ let mapStateToProps = (state) => ({
   profile: state.profilePage.profile
 });
 
-// const ProfileContainer = connect(mapStateToProps, { setUserProfile })(
-//   WithUrlDataContainerComponent
-// );
-
-// let WithUrlDataContainerComponent = withRouter(ProfilesContainer);
-
-const ProfileContainer = connect(mapStateToProps, { setUserProfile })(
-  ProfilesContainer
-);
+const ProfileContainer = compose(
+  connect(mapStateToProps, { getUserProfile }),
+  withAuthRedirect
+)(ProfilesContainer);
 
 export default ProfileContainer;

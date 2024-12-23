@@ -4,31 +4,8 @@ import {
   updateNewMessageBodyCreator
 } from '../../redux/dialogs-reducer';
 import Dialogs from './Dialogs';
-
-// const DialogsContainer = (props) => {
-//   return (
-//     <StoreContext.Consumer>
-//       {(store) => {
-//         let onSendMessageClick = () => {
-//           props.store.dispatch(sendMessageCreator());
-//         };
-
-//         let onNewMessageChange = (body) => {
-//           props.store.dispatch(updateNewMessageBodyCreator(body));
-//         };
-
-//         return (
-//           <Dialogs
-//             store={store}
-//             updateNewMessageBody={onNewMessageChange}
-//             sendMessage={onSendMessageClick}
-//             dialogsPage={props.store.getState().dialogsPage}
-//           />
-//         );
-//       }}
-//     </StoreContext.Consumer>
-//   );
-// };
+import withAuthRedirect from '../../hoc/withAuthRedirect';
+import { compose } from 'redux';
 
 let mapStateToProps = (state) => {
   return {
@@ -47,6 +24,9 @@ let mapDispatchToProps = (dispatch) => {
   };
 };
 
-const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Dialogs);
+const DialogsContainer = compose(
+  connect(mapStateToProps, mapDispatchToProps),
+  withAuthRedirect
+)(Dialogs);
 
 export default DialogsContainer;

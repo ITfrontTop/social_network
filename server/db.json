@@ -1587,6 +1587,17 @@
       }
     }
   ],
+  "auth/me": [
+    {
+      "data": {
+        "userId": 2,
+        "email": "email@gmail.com",
+        "login": "samurai"
+      },
+      "result": 0,
+      "message": ""
+    }
+  ],
   "totalCount": 44,
   "error": null
 }
