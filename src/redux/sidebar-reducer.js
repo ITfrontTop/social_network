@@ -34,7 +34,7 @@ let initialState = {
       id: 6,
       name: 'Mate',
       images:
-        'https://img.freepik.com/premium-vector/student-avatar-illustration-user-profile-icon-youth-avatar_118339-4395.jpg'
+        'https://i.pinimg.com/736x/71/81/14/7181149979b9cc345415d3b6465b192b.jpg'
     },
     {
       id: 7,

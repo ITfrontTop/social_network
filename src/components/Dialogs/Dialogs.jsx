@@ -2,7 +2,8 @@ import s from './Dialogs.module.css';
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
 import { LuSendHorizonal } from 'react-icons/lu';
-import Redirect from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
+import { Field } from 'react-final-form';
 
 const Dialogs = (props) => {
   let state = props.dialogsPage;
@@ -32,28 +33,33 @@ const Dialogs = (props) => {
     props.updateNewMessageBody(body);
   };
 
-  if (!props.isAuth) return <Redirect to={'/login'} />;
+  if (!props.isAuth) return <Navigate to={'/'} />;
 
   return (
     <div className={s.dialogs}>
       <div className={s.dialogsItems}>{dialogsElements}</div>
       <div className={s.messages}>
         <div>{messagesElements}</div>
-        <div className={s.sendMessage}>
-          <div>
-            <textarea
-              value={newMessageBody}
-              onChange={onNewMessageChange}
-              className={s.sendWindow}
-              placeholder="Enter your message"
-            ></textarea>
-          </div>
-          <div className={s.sendButton} onClick={sendMessageClick}>
-            <LuSendHorizonal color="#fff" />
-          </div>
-        </div>
       </div>
+      <AddMessageForm />
     </div>
+  );
+};
+
+const AddMessageForm = (props) => {
+  return (
+    <form onSubmit={props.handelSubmit} className={s.sendMessage}>
+      <div>
+        <Field
+          component="textarea"
+          name="newMessageBody"
+          placeholder="Enter your message"
+        />
+      </div>
+      <div className={s.sendButton}>
+        <LuSendHorizonal color="#fff" />
+      </div>
+    </form>
   );
 };
 

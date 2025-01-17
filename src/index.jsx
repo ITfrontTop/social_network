@@ -3,10 +3,19 @@ import App from './App';
 import store from './redux/redux-store';
 import { createRoot } from 'react-dom/client';
 import { StrictMode } from 'react';
-import DialogsContainer from './components/Dialogs/DialogsContainer';
+
+// import DialogsContainer from './components/Dialogs/DialogsContainer';
+const DialogsContainer = React.lazy(() =>
+  import('./components/Dialogs/DialogsContainer')
+);
+
+// import ProfileContainer from './components/Profile/ProfileContainer';
+const ProfileContainer = React.lazy(() =>
+  import('./components/Profile/ProfileContainer')
+);
+
 import { Provider } from 'react-redux';
 import UserContainer from './components/Users/UsersContainer';
-import ProfileContainer from './components/Profile/ProfileContainer';
 import LoginPage from './components/Login/Login';
 
 const root = createRoot(document.getElementById('root'));
