@@ -96,8 +96,12 @@ export const setStatus = (status) => ({ type: SET_STATUS, status });
 export const deletePost = (postId) => ({ type: DELETE_POST, postId });
 
 export const getUserProfile = (userId) => async (dispatch) => {
-  let response = await usersAPI.getProfile(userId);
-  dispatch(setUserProfile(response.data));
+  try {
+    let response = await usersAPI.getProfile(userId);
+    dispatch(setUserProfile(response.data));
+  } catch (error) {
+    alert('');
+  }
 };
 
 export const getStatus = (userId) => async (dispatch) => {
